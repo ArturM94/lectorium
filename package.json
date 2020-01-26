@@ -7,6 +7,13 @@
     "start": "tsc && node --require dotenv/config dist/app.js",
     "dev": "nodemon --watch src/**/*.ts --require dotenv/config src/app.ts",
     "dev:debug": "nodemon --exec node --inspect=9229 --require dotenv/config --require ts-node/register src/app.ts",
+    "migration:create": "ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js migration:create -n",
+    "migration:generate": "ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js migration:generate -n",
+    "migration:run": "ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js migration:run",
+    "migration:revert": "ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js migration:revert",
+    "migration:show": "ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js migration:show",
+    "schema:sync": "ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js schema:sync",
+    "schema:drop": "ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js schema:drop"
   },
   "repository": {
     "type": "git",
