@@ -1,10 +1,5 @@
 import { ConnectionOptions } from 'typeorm';
 
-export const appConfig = {
-  HOST: process.env.HOST || 'localhost',
-  PORT: process.env.PORT || '3000',
-};
-
 export const dbConnectionConfig: ConnectionOptions = {
   type: 'postgres',
   host: process.env.DB_HOST || 'localhost',
