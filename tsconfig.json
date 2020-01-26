@@ -12,7 +12,15 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "baseUrl": "src",
+    "paths": {
+      "@config/*": ["config/*"],
+      "@controllers/*": ["controllers/*"],
+      "@db/*": ["db/*"],
+      "@models/*": ["models/*"],
+      "@routes/*": ["routes/*"]
+    }
   },
   "include": [
     "./src/**/*"
