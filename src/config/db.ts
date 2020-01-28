@@ -7,4 +7,16 @@ export const dbConnectionConfig: ConnectionOptions = {
   username: process.env.DB_USERNAME || 'postgres',
   password: process.env.DB_PASSWORD || 'postgres',
   database: process.env.DB_NAME || 'lectorium',
+  synchronize: true,
+  logging: false,
+  entities: [
+    'src/models/**/*.ts'
+  ],
+  migrations: [
+    'src/db/migrations/**/*.ts'
+  ],
+  cli: {
+    entitiesDir: 'src/models',
+    migrationsDir: 'src/db/migrations'
+  }
 };
