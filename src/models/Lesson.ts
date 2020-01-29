@@ -25,11 +25,15 @@ export class Lesson {
   @Column({ type: 'varchar', length: 100 })
   topic!: string;
 
-  @ManyToOne(() => Teacher, teacher => teacher.lessons)
+  @ManyToOne(() => Teacher, teacher => teacher.lessons, {
+    cascade: true
+  })
   @JoinColumn({ name: 'teacher_id' })
   teacher!: Teacher;
 
-  @ManyToOne(() => Group, group => group.lessons)
+  @ManyToOne(() => Group, group => group.lessons, {
+    cascade: true
+  })
   @JoinColumn({ name: 'group_id' })
   group!: Group;
 
