@@ -24,7 +24,9 @@ export class Student {
   @Column({ type: 'smallint', default: 0 })
   rating!: number;
 
-  @ManyToOne(() => Group, group => group.students)
+  @ManyToOne(() => Group, group => group.students, {
+    cascade: true
+  })
   @JoinColumn({ name: 'group_id' })
   group!: Group;
 
