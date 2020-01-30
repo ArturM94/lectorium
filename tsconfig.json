@@ -18,7 +18,9 @@
       "@config/*": ["config/*"],
       "@controllers/*": ["controllers/*"],
       "@db/*": ["db/*"],
+      "@middlewares/*": ["middlewares/*"],
       "@models/*": ["models/*"],
+      "@services/*": ["services/*"],
       "@routes/*": ["routes/*"]
     }
   },
