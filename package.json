@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node dist/app.js",
+    "start": "tsc && node -r ./tsconfig-paths-bootstrap.js dist/app.js",
     "dev": "nodemon --config nodemon.json",
     "dev:debug": "nodemon --config nodemon.debug.json",
     "migration:create": "ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js migration:create -n",
