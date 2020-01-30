@@ -15,8 +15,11 @@ export class Teacher {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @Column({ type: 'varchar', length: 15, name: 'first_name' })
-  firstName!: string;
+  @Column({ unique: true })
+  email!: string;
+
+  @Column({ select: false })
+  password!: string;
 
   @Column({ type: 'varchar', length: 15, name: 'last_name' })
   lastName!: string;
