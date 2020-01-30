@@ -2,6 +2,7 @@ import 'dotenv/config';
 import express, { ErrorRequestHandler, RequestHandler } from 'express';
 
 import { ApiRouter } from '@routes/api';
+import { AuthRouter } from '@routes/auth';
 import { appConfig } from '@config/app';
 import { initiateDbConnection } from '@db/connection';
 import JWT from '@middlewares/auth/JWT';
@@ -22,6 +23,7 @@ initiateDbConnection();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/auth', AuthRouter);
 app.use('/api', authMiddlewares, ApiRouter);
 app.use(errorMiddlewares);
 
