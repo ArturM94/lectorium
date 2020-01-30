@@ -21,7 +21,10 @@ export class Teacher {
   @Column({ select: false })
   password!: string;
 
-  @Column({ type: 'varchar', length: 15, name: 'last_name' })
+  @Column({ type: 'varchar', length: 15, default: '', name: 'first_name' })
+  firstName!: string;
+
+  @Column({ type: 'varchar', length: 15, default: '', name: 'last_name' })
   lastName!: string;
 
   @OneToMany(() => Lesson, lesson => lesson.teacher)
