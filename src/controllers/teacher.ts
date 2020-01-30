@@ -32,7 +32,7 @@ export class TeacherController {
         relations: ['lessons', 'lessons.group', 'lessons.group.students']
       };
 
-      const teacher: Teacher | undefined = await TeacherDAO.findOne(id, options);
+      const teacher: Teacher | undefined = await TeacherDAO.findOneById(id, options);
 
       if (teacher === undefined) {
         return res.sendStatus(404);
@@ -67,7 +67,7 @@ export class TeacherController {
         relations: ['lessons', 'lessons.group', 'lessons.group.students']
       };
 
-      const teacherToUpdate: Teacher | undefined = await TeacherDAO.findOne(id, options);
+      const teacherToUpdate: Teacher | undefined = await TeacherDAO.findOneById(id, options);
 
       if (teacherToUpdate === undefined) {
         return res.sendStatus(404);
@@ -90,7 +90,7 @@ export class TeacherController {
         relations: ['lessons', 'lessons.group', 'lessons.group.students']
       };
 
-      const teacherToDelete: Teacher | undefined = await TeacherDAO.findOne(id, options);
+      const teacherToDelete: Teacher | undefined = await TeacherDAO.findOneById(id, options);
 
       if (teacherToDelete === undefined) {
         return res.sendStatus(404);
