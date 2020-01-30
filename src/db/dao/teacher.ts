@@ -11,6 +11,10 @@ export class TeacherDAO {
     return getRepository(Teacher).findOne(id, options);
   }
 
+  static findOne(options?: FindOneOptions<Teacher>): Promise<Teacher | undefined> {
+    return getRepository(Teacher).findOne(options);
+  }
+
   static createOne(teacher: Teacher): Teacher {
     return getRepository(Teacher).create(teacher);
   }
