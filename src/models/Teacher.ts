@@ -13,7 +13,7 @@ import { Lesson } from '@models/Lesson';
 export class Teacher {
 
   @PrimaryGeneratedColumn()
-  id!: number;
+  id?: number;
 
   @Column({ unique: true })
   email!: string;
@@ -22,18 +22,18 @@ export class Teacher {
   password!: string;
 
   @Column({ type: 'varchar', length: 15, default: '', name: 'first_name' })
-  firstName!: string;
+  firstName?: string;
 
   @Column({ type: 'varchar', length: 15, default: '', name: 'last_name' })
-  lastName!: string;
+  lastName?: string;
 
   @OneToMany(() => Lesson, lesson => lesson.teacher)
   @JoinColumn({ name: 'lesson_ids' })
-  lessons!: Lesson[];
+  lessons?: Lesson[];
 
   @UpdateDateColumn({ name: 'updated_at' })
-  updatedAt!: Date;
+  updatedAt?: Date;
 
   @CreateDateColumn({ name: 'created_at' })
-  createdAt!: Date;
+  createdAt?: Date;
 }
